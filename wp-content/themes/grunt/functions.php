@@ -20,7 +20,7 @@ show_admin_bar(TRUE);
 
 // Shortcodes
 
-include('shortcodes.php');
+// include('shortcodes.php');
 
 // Add theme support for Automatic Feed Links
 
@@ -48,128 +48,6 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		)
 	);
 }
-// Sidebars
-
-if (function_exists('register_sidebar')) {
-
-	// Right Sidebar
-
-	register_sidebar(array(
-		'name'=> 'Right Sidebar',
-		'id' => 'right_sidebar',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	));
-	
-	// Header Widgets
-	
-	register_sidebar(array(
-		'name'=> 'Header Widgets',
-		'id' => 'header_widgets',
-		'before_widget' => '<div id="header_widgets">',
-		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
-	));
-
-	// Footer Sidebar
-	
-	register_sidebar(array(
-		'name'=> 'Footer Sidebar',
-		'id' => 'footer_sidebar',
-		'before_widget' => '<div id="%1$s" class="four columns %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	));
-
-	// Homepage Promo Left
-	
-	register_sidebar(array(
-		'name'=> 'Homepage Promo Left',
-		'id' => 'homepage_promo_left',
-		'before_widget' => '<div id="%1$s" class="four columns %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-
-	// Homepage Promo Center
-	
-	register_sidebar(array(
-		'name'=> 'Homepage Promo Center',
-		'id' => 'homepage_promo_center',
-		'before_widget' => '<div id="%1$s" class="four columns %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-
-	// Homepage Promo Right
-	
-	register_sidebar(array(
-		'name'=> 'Homepage Promo Right',
-		'id' => 'homepage_promo_right',
-		'before_widget' => '<div id="%1$s" class="four columns %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-// Comments
-
-// Custom callback to list pings
-
-// Produces an avatar image with the hCard-compliant photo class
-
-// Orbit, for WordPress
-
-add_action('init', 'Orbit');
-
-function Orbit(){
-	$Orbit_args = array(
-		'label'	=> __('Orbit'),
-		'singular_label' =>	__('Orbit'),
-		'public'	=>	true,
-		'show_ui'	=>	true,
-		'capability_type'	=>	'post',
-		'hierarchical'	=>	false,
-		'rewrite'	=>	true,
-		'supports'	=>	array('title', 'editor','page-attributes','thumbnail')
-		);
-		register_post_type('Orbit', $Orbit_args);
-}
-
-function SliderContent(){
-
-	$args = array( 'post_type' => 'Orbit');
-	$loop = new WP_Query( $args );
-	
-		while ( $loop->have_posts() ) : $loop->the_post();
-		
-			if(has_post_thumbnail()) {
-			
-				the_post_thumbnail();
-				
-			} else {
-			
-				echo '<div class="content" style="background:#FFF;">';
-			
-					the_title();
-					the_content();
-					
-				echo '</div>';
-			
-			}
-		
-		endwhile;
-		
-}
-
-
 
 // Custom Pagination
 /**
