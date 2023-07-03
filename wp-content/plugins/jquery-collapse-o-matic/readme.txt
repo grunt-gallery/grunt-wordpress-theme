@@ -1,11 +1,11 @@
 === Collapse-O-Matic ===
 
 Contributors: twinpictures, baden03
-Donate link: https://plugins.twinpictures.de/plugins/collapse-o-matic/
+Donate link: https://pluginoven.com/panares-fund/
 Tags: collapse, expand, collapsible, expandable, expandable content, collapsable content, shortcode, hidden, hide, display, accordion, accordion, jQuery, javascript, roll-your-own, twinpictures, read me, read more, more, plugin oven
 Requires at least: 4.9
-Tested up to: 5.8.2
-Stable tag: 1.8.2
+Tested up to: 6.1.1
+Stable tag: 1.8.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,12 @@ No. Not even close.
 3. Options Page? Yes, Options Page!
 
 == Changelog ==
+
+= 1.8.3 =
+* added fadeOnly effect option
+* fully tested with WordPress version 6.0.1
+* swap title also swaps the title attribute if used
+* escaped all attributes before output
 
 = 1.8.2 =
 * custom css now added to new core.css file that is not affected if no default style is loaded.
@@ -403,5 +409,7 @@ Fixed auto-expand of urls with id-anchors
 * The plug-in came to be.
 
 == Upgrade Notice ==
-* custom css now added to new core.css file that is not affected if no default style is loaded.
-* fully tested with WordPress version 5.8.2
+* added fadeOnly effect option
+* fully tested with WordPress version 6.0.1
+* swap title also swaps the title attribute if used
+* escaped all attributes before output

@@ -2,7 +2,7 @@
 Theme Name: grunt
 */
 
-/* grunt has its own kind of reset happening rn */
+/* grunt.ca has its own kind of reset happening rn */
 /* @tailwind base; */
 
 /* -------------------------------------------------- 
@@ -3037,7 +3037,7 @@ em {
 body {
   background: #333
     /* url(../../../wp-content/uploads/tile_bg.jpg) */
-    url(https://grunt.ca/img/salt_and_pepper_tile_300px_bg.png);
+    url('img/salt_and_pepper_tile_300px_bg.png');
   color: #000;
 }
 

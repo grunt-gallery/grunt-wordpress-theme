@@ -34,15 +34,15 @@ function exhibitions_register()
     $args = array(
         'labels' => $labels,
         'public' => true,
+        'menu_icon' => 'dashicons-art',
         'publicly_queryable' => true,
         'show_ui' => true,
         'query_var' => true,
-        'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
         'rewrite' => array('slug' => 'exhibitions'),
         'has_archive' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'menu_position' => null,
+        'menu_position' => 3,
         'supports' => array('title', 'editor', 'thumbnail'),
     );
 

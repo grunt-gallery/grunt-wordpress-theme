@@ -298,4 +298,42 @@ function wpdocs_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
+// remove comments menu item
+add_action('admin_menu', 'my_remove_menu_pages');
+function my_remove_menu_pages()
+{
+    remove_menu_page('edit-comments.php');
+}
+
+// remove links menu item
+add_action('admin_menu', 'remove_links_menu');
+function remove_links_menu()
+{
+    remove_menu_page('link-manager.php');
+}
+
+// re-order the admin menu
+// https://wordpress.stackexchange.com/questions/276230/how-can-i-control-the-position-in-the-admin-menu-of-items-added-by-plugins/276248
+add_filter('custom_menu_order', function () {return true;});
+add_filter('menu_order', 'my_new_admin_menu_order');
+function my_new_admin_menu_order($menu_order)
+{
+    $new_positions = array(
+        'edit.php' => 5,
+        'upload.php' => 6,
+    );
+    function move_element(&$array, $a, $b)
+    {
+        $out = array_splice($array, $a, 1);
+        array_splice($array, $b, 0, $out);
+    }
+    foreach ($new_positions as $value => $new_index) {
+        if ($current_index = array_search($value, $menu_order)) {
+            move_element($menu_order, $current_index, $new_index);
+        }
+    }
+    return $menu_order;
+};
+
+
 ?>

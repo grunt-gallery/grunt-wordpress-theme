@@ -38,7 +38,7 @@ class UpdraftCentral_Theme_Commands extends UpdraftCentral_Commands {
 	 *
 	 * link to udrpc_action main function in class UpdraftCentral_Listener
 	 */
-	public function _post_action($command, $data, $extra_info) {// phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+	public function _post_action($command, $data, $extra_info) {// phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable -- Unused parameter is present because the caller from UpdraftCentral_Listener class uses 3 arguments.
 		// Here, we're restoring to the current (default) blog before we switched
 		if ($this->switched) restore_current_blog();
 	}
@@ -345,7 +345,9 @@ class UpdraftCentral_Theme_Commands extends UpdraftCentral_Commands {
 		$results = array();
 		if (!empty($action) && !empty($items) && is_array($items)) {
 			foreach ($items as $value) {
-				$results[] = array($this, $action)($value);
+				if (method_exists($this, $action)) {
+					$results[] = $this->$action($value);
+				}
 			}
 		}
 
