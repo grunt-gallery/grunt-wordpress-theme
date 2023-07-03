@@ -1509,7 +1509,7 @@ div.panel {
 }
 
 .nav-bar>li:hover>a:after {
-  border-top-color: #141414;
+  border-top-color: #FFFFFF;
 }
 
 .flyout {
