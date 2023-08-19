@@ -10,6 +10,18 @@
   <title><?php if ( is_front_page() ) { echo 'Home'; } else { wp_title(''); } ?> | <?php bloginfo('name'); ?></title>
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 	<?php wp_head(); ?>
+  <script>
+    (function(d){
+      var s = d.createElement("script");
+      s.setAttribute("data-position", 3);
+      s.setAttribute("data-color", "#000000");
+      s.setAttribute("data-account", "B0I6yz9cSR");
+      s.setAttribute("data-size", "large");
+      s.setAttribute("src", "https://cdn.userway.org/widget.js");
+      (d.body || d.head).appendChild(s);
+    })(document)
+    </script>
+    <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
 	<!-- Global site tag (gtag.js) - Google Ads: 741140217 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-741140217"></script>
   <script>

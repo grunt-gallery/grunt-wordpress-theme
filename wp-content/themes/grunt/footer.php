@@ -5,6 +5,7 @@
     $territory_acknowledgement = get_field("territory_acknowledgement", 19742);
     $accessibility = get_field("accessibility", 19742);
     $funder_text = get_field("funder_text", 19742);
+    $funder_logos = get_field("funder_logos", 19742);
   ?>
 	<!-- Footer -->
 	<footer class="row">
@@ -25,7 +26,7 @@
           <br>Phone: <a href="tel:+16048759516">604&ndash;875&ndash;9516</a>
           <br>Hours: Tuesday&ndash;Saturday, Noon&ndash;5pm
           <br>
-          <br><a href="https: //goo.gl/maps/nXNpHn7w427TKd6RA" target="_blank">MAP</a>
+          <br><a href="https://goo.gl/maps/nXNpHn7w427TKd6RA" target="_blank">MAP</a>
         </p>
       </div>
  
@@ -33,9 +34,9 @@
       <div class="px-6 py-4">
         <h4>Connect with us on social media!</h4>			
         <div class="textwidget">
-          <a href="https://twitter.com/gruntgallery"><img src="https://grunt.ca/wordpress/wp-content/uploads/2018/05/grunttwitter.png" width="42"></a>&nbsp;&nbsp;
-          <a href="https://www.facebook.com/gruntgallery"><img src="https://grunt.ca/wordpress/wp-content/uploads/2018/05/gruntfacebook.png" width="42"></a>&nbsp;&nbsp;
-          <a href="https://instagram.com/gruntgallery"><img src="https://grunt.ca/wordpress/wp-content/uploads/2018/05/gruntinstagram.png" width="42"></a>
+          <a href="https://twitter.com/gruntgallery"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/05/grunttwitter.png" width="42"></a>&nbsp;&nbsp;
+          <a href="https://www.facebook.com/gruntgallery"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/05/gruntfacebook.png" width="42"></a>&nbsp;&nbsp;
+          <a href="https://instagram.com/gruntgallery"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/05/gruntinstagram.png" width="42"></a>
         </div>
       </div>
    
@@ -89,11 +90,13 @@
 <div class="row">
   <div id="sponsor-logos" class="twelve columns">
     <?php if ($funder_text) {?>
-      <p class="text-center">
+      <p class="text-center" style="padding: 0 20px">
         <?php echo $funder_text; ?>
       </p>
     <?php }?>
-    <p><img class=" size-large wp-image-3440 aligncenter" alt="logos for footer of website-01" src="http://localhost:8888/grunt/wp-content/uploads/2013/06/logos-for-footer-of-website-01-1024x124.png" width="700" align="center" srcset="http://localhost:8888/grunt/wp-content/uploads/2013/06/logos-for-footer-of-website-01-1024x124.png 1024w, http://localhost:8888/grunt/wp-content/uploads/2013/06/logos-for-footer-of-website-01-250x30.png 250w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+    <div style="max-width: 620px; margin: 0 auto; padding: 0 20px;">
+      <p><img alt="funder logos for footer of website-01" src="<?php echo $funder_logos; ?>"></p>
+    </div>
 	</div>
 	</div> <!-- /.row -->
 	</footer> <!-- Footer -->
