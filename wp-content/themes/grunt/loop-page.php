@@ -3,7 +3,7 @@
   <!-- Skip Nav -->
   <a id="content"></a>
 
-  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-1 gap-5">
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-5">
     
       <!--Card 1-->
       <div class="px-6">
